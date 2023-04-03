@@ -9,34 +9,35 @@
 
 <script>
 export default {
-  mounted() {
-    this.initVideoPlayer();
+  mounted () {
+    this.initVideoPlayer()
   },
   methods: {
-    initVideoPlayer() {
-      const container = this.$refs.videoContainer;
-      const player = new WebVideoCtrl.IVSPlayer(container);
+    initVideoPlayer () {
+      const container = this.$refs.videoContainer
+      // eslint-disable-next-line no-undef
+      const player = new WebVideoCtrl.IVSPlayer(container)
       player.init({
         cameraIndexCode: 'camera1',
-        url: 'http://example.com/video.mp4',
-      });
-      this.player = player;
+        url: 'http://example.com/video.mp4'
+      })
+      this.player = player
     },
-    play() {
+    play () {
       if (this.player) {
-        this.player.play();
+        this.player.play()
       }
     },
-    pause() {
+    pause () {
       if (this.player) {
-        this.player.pause();
+        this.player.pause()
       }
     },
-    stop() {
+    stop () {
       if (this.player) {
-        this.player.stop();
+        this.player.stop()
       }
-    },
-  },
-};
+    }
+  }
+}
 </script>
